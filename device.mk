@@ -92,7 +92,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm7627a \
+    camera.default \
     libsurfaceflinger_client
 
 # Bluetooh
@@ -153,6 +153,7 @@ PRODUCT_PACKAGES += \
 
 # Hardware properties 
 PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -285,9 +286,6 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
-
-# common qcom configs
-$(call inherit-product, device/qcom/common/common.mk)
 
 # htc audio settings
 $(call inherit-product, device/htc/protou/media_htcaudio.mk)
